@@ -1,12 +1,12 @@
-import React from 'react'
+import React from 'react' 
 
 function Tugas6() {
     return (
         <div className="App">
-          <div className="container">
-            <h1 className="h1">Hi, Saya Ammar</h1>
-            <hr className="hr"></hr>
-            <p className="p">
+          <div className="mx-[150px] my-[50px] rounded-xl drop-shadow-xl bg-white p-4">
+            <h1 className="text-xl font-bold text-left py-3 ">Hi, Saya Ammar</h1>
+            <hr className="py-3"></hr>
+            <p className='text-left'>
               Saya dari batch 55 dan sudah berhasil menginstall react
             </p>
           </div>
