@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import axios from 'axios'
 import {Table} from 'flowbite-react'
+import Tugas12 from '../tugas12/tugas12'
 
 function Tugas10() {
 
@@ -33,6 +34,7 @@ function Tugas10() {
 
   return (
     <div className="overflow-x-auto mx-[150px] my-[50px] rounded-xl drop-shadow-xl bg-white px-4">
+    <Tugas12/>
     <Table>
       <Table.Head className='bg-violet-400 text-white'>
         <Table.HeadCell>No</Table.HeadCell>

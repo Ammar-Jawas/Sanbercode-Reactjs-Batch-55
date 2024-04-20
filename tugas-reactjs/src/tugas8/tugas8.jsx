@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import Tugas12 from '../tugas12/tugas12'
 
 function Tugas8() {
     const [count, setCount] = useState(0)
@@ -9,7 +10,7 @@ function Tugas8() {
 
     return (
         <div className="App">
-        
+        <Tugas12/>
         <div className="mx-[150px] my-[50px] rounded-xl drop-shadow-xl bg-white p-4">
         <p>{count}</p>
         {count > 10 ?  <p>State count lebih dari 10</p> : ""}
