@@ -1,4 +1,4 @@
-import { Navbar, TextInput, Card, Button } from "flowbite-react"
+import { Navbar, TextInput, Card, Button, Footer } from "flowbite-react"
 import hero from '../assets/hero-bg.jpg'
 import {HiCurrencyDollar, HiLocationMarker, HiOutlineClipboard, HiOutlineDotsVertical, HiSearchCircle} from 'react-icons/hi'
 import google from '../assets/google.svg'
@@ -80,7 +80,7 @@ export default function Home() {
         <div className="p-4 absolute top-0 left-0 w-full">
             <Navbar fluid rounded className="bg-blur">
                 <Navbar.Brand  href="https://flowbite-react.com">
-                    <span className="self-center whitespace-nowrap text-xl font-semibold text-white">Flowbite React</span>
+                    <span className="self-center whitespace-nowrap text-xl font-semibold text-white">Job Finder</span>
                 </Navbar.Brand>
                 <Navbar.Toggle />
                 <Navbar.Collapse>
@@ -164,6 +164,28 @@ export default function Home() {
             </div>
         </section>
         {/* Card Section End */}
+        {/* Footer Section Start */}
+        <Footer container>
+            <div className="w-full text-center px-20">
+                <div className="w-full justify-between sm:flex sm:items-center sm:justify-between">
+                <Footer.Brand
+                    href="https://flowbite.com"
+                    src="https://flowbite.com/docs/images/logo.svg"
+                    alt="Flowbite Logo"
+                    name="Job Finder"
+                />
+                <Footer.LinkGroup>
+                    <Footer.Link href="#">About</Footer.Link>
+                    <Footer.Link href="#">Privacy Policy</Footer.Link>
+                    <Footer.Link href="#">Licensing</Footer.Link>
+                    <Footer.Link href="#">Contact</Footer.Link>
+                </Footer.LinkGroup>
+                </div>
+                <Footer.Divider />
+                <Footer.Copyright href="#" by="Mar™" year={2024} />
+            </div>
+        </Footer>
+        {/* Footer Section End */}
     </div>
   )
 }
