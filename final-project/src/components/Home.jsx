@@ -1,6 +1,6 @@
 import { Navbar, TextInput, Card, Button, Footer } from "flowbite-react"
 import hero from '../assets/hero-bg.jpg'
-import {HiCurrencyDollar, HiLocationMarker, HiOutlineClipboard, HiOutlineDotsVertical, HiSearchCircle} from 'react-icons/hi'
+import {HiCurrencyDollar, HiLocationMarker, HiOutlineBriefcase, HiOutlineClipboard, HiOutlineDotsVertical, HiSearchCircle} from 'react-icons/hi'
 import google from '../assets/google.svg'
 import netflix from '../assets/netflix.svg'
 import apple from '../assets/apple.svg'
@@ -30,13 +30,32 @@ export default function Home() {
         fetchJob()
     }, [])
 
+    const convertPrice = (param) => {
+        if(param !== 0){
+          return new Intl.NumberFormat("id-ID", {
+            style: "currency",
+            currency: "IDR"
+          }).format(param);
+        }else{
+          return 'Free'
+        }
+    }
+
+    const convertStatus = (param) => {
+        if(param === 1){
+            return 'Open'
+        }else{
+            return 'Close'
+        }
+    }
+
     const renderData = () => {
         return job.map((param) => {
              return (
                 // eslint-disable-next-line react/jsx-key
                 <Card className="mb-10 items-center" imgSrc={param.company_image_url} horizontal>
                     <div className="flex flex-col">
-                        <div className="gap-4 flex flex-col">
+                        <div className="gap-4 flex flex-col mb-3">
                             <h5 className="text-2xl text-left font-bold tracking-tight text-gray-900 dark:text-white">
                                 {param.title}
                             </h5>
@@ -52,14 +71,21 @@ export default function Home() {
                                 <HiOutlineClipboard/>
                                 <p className="font-normal text-gray-700 dark:text-gray-400 mr-5">
                                     {param.job_tenure}
-                                </p>
+                                </p>                  
+                                <HiOutlineBriefcase/>
+                                <p className="font-normal text-gray-700 dark:text-gray-400 mr-5 ml-1">
+                                {convertStatus(param.job_status)}
+                                </p>      
+                            </div>
+                            <div className="flex text-left flex-row flex-wrap items-center">
+                               
                                 <HiCurrencyDollar/>
                                 <p className="font-normal text-gray-700 dark:text-gray-400">
-                                    {param.salary_min}
+                                    {convertPrice(param.salary_min)}
                                 </p>
                                 <p> - </p>
                                 <p className="font-normal text-gray-700 dark:text-gray-400">
-                                    {param.salary_max}
+                                    {convertPrice(param.salary_max)}
                                 </p>
                             </div>
                         </div>
